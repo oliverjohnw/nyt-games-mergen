@@ -14,7 +14,7 @@ def monthly_competition(
         app_config (dict): dictionary with app configs/inputs
 
     """
-    st.subheader("Monthly Competitions")
+    st.subheader("Monthly Competitions :)")
 
     # load player data
     player_data = load_player_data(app_config)
