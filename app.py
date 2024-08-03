@@ -35,7 +35,7 @@ left_column, spacer, right_column = st.columns([1, 0.6, 2])
 with left_column:
     option = st.selectbox(
         "Choose An Option",
-        ["Monthly Competitions", "Enter Daily Scores", "Player Statistics"]
+        ["Select an option", "Monthly Competitions", "Enter Daily Scores", "Player Statistics"]
     )
 
     # if option == "Enter Daily Scores":
