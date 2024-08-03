@@ -1,0 +1,1 @@
+from .display_monthly_competition import display_monthly_competition

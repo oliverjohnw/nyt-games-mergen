@@ -1,5 +1,9 @@
 import streamlit as st
 
+# local imports
+from steps.monthly_competition import display_monthly_competition
+from src.utils import load_player_data
+
 def monthly_competition(
     app_config: dict
 ):
@@ -11,4 +15,9 @@ def monthly_competition(
 
     """
     st.subheader("Monthly Competitions")
-    st.write("This is where monthly competitions will be displayed.")
+
+    # load player data
+    player_data = load_player_data(app_config)
+
+    # display statistics
+    display_monthly_competition(app_config, player_data)

@@ -17,6 +17,8 @@ def display_todays_scores(
 
     # map scores
     today_scores['Score'] = today_scores.apply(reverse_score_mapping, axis=1)
+    today_scores = today_scores.loc[:, ["Player", "Game", "Score"]]
+    today_scores = today_scores.sort_values(by = "Game")
 
     # Display the current scores
     st.header("Today's Scores:")
@@ -36,8 +38,9 @@ def reverse_score_mapping(row):
         return wordle_reverse_mapping.get(row['Score'], row['Score'])
     elif game == 'Connections':
         return connections_reverse_mapping.get(row['Score'], row['Score'])
-    elif game == 'Mini':
-        minutes, seconds = divmod(row['Score'], 60)
+    elif game == "Mini":
+        total_seconds = int(row['Score'])  # Ensure score is an integer
+        minutes, seconds = divmod(total_seconds, 60)
         return f"{minutes}:{seconds:02d}"
     elif game == 'Strands':
         # Handle both Spanagram and Hint

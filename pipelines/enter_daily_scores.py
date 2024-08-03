@@ -2,10 +2,10 @@ import streamlit as st
 
 # local imports
 from steps.enter_daily_scores import (
-    load_player_data,
     input_data,
     display_todays_scores
 )
+from src.utils import load_player_data
 
 def enter_daily_scores(
     app_config: dict
