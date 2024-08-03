@@ -17,7 +17,7 @@ def enter_daily_scores(
         app_config (dict): dictionary with app configs/inputs
     """
     st.subheader("Enter Daily Scores")
-    st.write("Still a work in progress! Please don't use this feature yet :)")
+    st.subheader("Still a work in progress! Please don't use this feature yet :)")
     
     # load player data
     player_data = load_player_data(app_config)
