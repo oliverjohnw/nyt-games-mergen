@@ -17,12 +17,16 @@ app_config = read_file("config/app.yaml")
 header_col1, header_col2 = st.columns([3, 1])
 
 with header_col1:
-    st.title("NYT Daily Games Tracker")
+    st.title("Mergen NYT Daily Games Competition + Tracker")
+    st.write("")
+
 
 with header_col2:
     image_path = "img/nyt.png"  # Update this path to your image file
     logo_image = Image.open(image_path)
     st.image(logo_image, use_column_width=True)
+    st.write("")
+    st.write("")
 
 # two columns (left = dropdown, right = content)
 left_column, spacer, right_column = st.columns([1, 0.6, 2])
