@@ -51,26 +51,27 @@ with left_column:
 with spacer:
     st.empty()
 
-# content
-with right_column:
-    if option == "Enter Daily Scores":
-        enter_daily_scores(app_config)
+if option != "Select an option":
+    with right_column:
+        if option == "Enter Daily Scores":
+            enter_daily_scores(app_config)
 
-        st.write("")
-        st.write("")
-        image_path1 = "img/tucker.jpeg"  
-        st.image(image_path1, use_column_width=True)
+            st.write("")
+            st.write("")
+            image_path1 = "img/tucker.jpeg"  
+            st.image(image_path1, use_column_width=True)
 
-    elif option == "Monthly Competitions":
-        monthly_competition(app_config)
+        elif option == "Monthly Competitions":
+            monthly_competition(app_config)
 
-        st.write("")
-        st.write("")
-        image_path2 = "img/sufi.jpeg"
-        image2 = Image.open(image_path2)
-        rotated_image2 = image2.rotate(270, expand=True)
-        st.image(rotated_image2, use_column_width=True)
+            st.write("")
+            st.write("")
+            image_path2 = "img/sufi.jpeg"
+            image2 = Image.open(image_path2)
+            rotated_image2 = image2.rotate(270, expand=True)
+            st.image(rotated_image2, use_column_width=True)
 
-    elif option == "Player Statistics":
-        player_statistics(app_config)
+        elif option == "Player Statistics":
+            player_statistics(app_config)
+
 
