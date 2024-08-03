@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
 
 # local imports
 from pipelines import (
@@ -13,7 +14,15 @@ from src.utils import read_file
 app_config = read_file("config/app.yaml")
 
 # page title
-st.title("NYT Daily Games Tracker")
+header_col1, header_col2 = st.columns([3, 1])
+
+with header_col1:
+    st.title("NYT Daily Games Tracker")
+
+with header_col2:
+    image_path = "img/nyt.png"  # Update this path to your image file
+    logo_image = Image.open(image_path)
+    st.image(logo_image, use_column_width=True)
 
 # two columns (left = dropdown, right = content)
 left_column, spacer, right_column = st.columns([1, 0.6, 2])
@@ -24,6 +33,20 @@ with left_column:
         "Choose An Option",
         ["Enter Daily Scores", "Monthly Competitions", "Player Statistics"]
     )
+
+    st.write("")
+    st.write("")
+
+    if option == "Enter Daily Scores":
+        image_path1 = "img/tucker.jpeg"  
+        st.image(image_path1, use_column_width=True)  
+
+    elif option == "Monthly Competitions":
+        image_path2 = "img/sufi.jpeg"
+        image2 = Image.open(image_path2)
+        rotated_image2 = image2.rotate(270, expand=True)
+        st.image(rotated_image2, use_column_width=True)
+
 with spacer:
     st.empty()
 
