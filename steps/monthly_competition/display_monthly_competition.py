@@ -7,7 +7,7 @@ from src.monthly_competition import (
     display_connections_competition,
     display_mini_competition,
     display_strands_competition,
-    # display_total_score_competition
+    display_total_score_competition
 )
 
 def display_monthly_competition(
@@ -31,25 +31,24 @@ def display_monthly_competition(
     month = st.selectbox("Select Month", months, format_func=lambda x: x.strftime('%B %Y'))
 
     # game options
-    game = st.selectbox("Select Game", ["Wordle", "Connections", "Mini", "Strands"])
+    game = st.selectbox("Select Game", ["Monthly Totals", "Wordle", "Connections", "Mini", "Strands"])
 
     # monthly data
     monthly_data = player_data[player_data['Month'] == month]
+
+    if game == "Monthly Totals":
+        display_total_score_competition(monthly_data)
 
     if game == "Wordle":
         display_wordle_competition(monthly_data)
 
     if game == "Connections":
-        display_connections_competition(player_data)
+        display_connections_competition(monthly_data)
 
     if game == "Mini":
         st.write(f"Selected Game: {game}")
-        display_mini_competition(player_data)
+        display_mini_competition(monthly_data)
 
     if game == "Strands":
         st.write(f"Selected Game: {game}")
-        display_strands_competition(player_data)
-
-    elif game == "Total Score":
-        st.write(f"Selected Game: {game}")
-        # display_total_score_competition(player_data)
+        display_strands_competition(monthly_data)

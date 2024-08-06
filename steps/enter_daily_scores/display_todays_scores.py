@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 from datetime import date
+from datetime import datetime
 
 def display_todays_scores(
     player_data: pd.DataFrame
@@ -12,7 +13,7 @@ def display_todays_scores(
         player_data (pd.DataFrame): dataframe with player scores
     """
     # filter for todays data
-    today = date.today()
+    today = date.today().strftime("%m/%d/%Y")
     today_scores = player_data[player_data['Date'] == str(today)]
 
     # map scores

@@ -2,4 +2,4 @@ from .display_wordle_competition import display_wordle_competition
 from .display_connections_competition import display_connections_competition
 from .display_mini_competition import display_mini_competition
 from .display_strands_competition import display_strands_competition
-# from .display_total_score_competition import display_total_score_competitions
+from .display_total_score_competition import display_total_score_competition

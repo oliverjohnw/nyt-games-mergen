@@ -25,6 +25,7 @@ def display_mini_competition(
     competition_scores.columns = ['Player', 'Points']
 
     competition_scores = competition_scores.sort_values(by = "Points", ascending = False)
+    competition_scores.index = [1,2,3]
 
     st.table(competition_scores)
 
